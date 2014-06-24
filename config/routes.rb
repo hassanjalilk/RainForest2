@@ -3,16 +3,11 @@ Rails.application.routes.draw do
 
  
 
-  get 'session/new'
-
-  get 'session/create'
-
-  get 'session/destroy'
-
   root 'products#index'
   resources :products
 
   resources :users, :only => [:new, :create]
+  resources :sessions, :only => [:new, :destroy, :create]
 
 end
 
